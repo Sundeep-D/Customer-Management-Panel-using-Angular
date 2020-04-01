@@ -1,6 +1,6 @@
 # Customer Management Panel using Angular
 <h7>A simple application to manage all your customers data with the help of Angular8 and Cloud database.</h7>
-<p>Visit  <a href="www.sundeepdayalan.in/projects/customermanagementpanel" target="_blank">Customer Management Panel</a></p>
+<p>Visit  <a href="www.sundeepdayalan.in/projects/customermanagementpanel" target="_blank" rel="noopener noreferrer">Customer Management Panel</a></p>
 
 <p align="center">
   <img src="https://firebasestorage.googleapis.com/v0/b/customermanagement-9b8a9.appspot.com/o/Screenshots%2FGroup%2015.png?alt=media&token=314f861f-5d74-48e3-8c6c-0998cc03f130"  title="Visit www.sundeepdayalan.in/projects/customermanagementpanel">
