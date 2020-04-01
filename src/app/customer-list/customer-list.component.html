@@ -1,0 +1,37 @@
+<head>
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
+
+</head>
+
+<form class="form-inline">
+    <h3>Search</h3> &nbsp; &nbsp; &nbsp; 
+    <input class="form-control" name="searchInput" placeholder="Enter Customer name" #searchInput="ngModel" [(ngModel)]="searchText" style="width: 80%;">
+    <button class="btn btn-outline-primary" (click)="searchText=''">
+        X
+    </button>
+</form>
+<br>
+
+
+<table class="table table-hover" style="background-color:#FFFFFF"  >
+    <thead class="header">
+        <th>Full Name</th>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th>Location</th>
+        <th>Actions</th>
+    </thead>
+    <ng-container *ngFor="let customer of customerArray">
+        <tr class="table-dark"  *ngIf="filterCondition(customer)">
+            <td class="data">{{customer.fullname}}</td>
+            <td class="data">{{customer.email}}</td> 
+            <td class="data">{{customer.mobile}}</td>
+            <td class="data">{{customer.location}}</td>
+            <!-- <td>{{customer.location}}</td> -->
+            <td>
+                <button class="btn btn-outline-info" (click)="populateForm(customer)">Edit</button> &nbsp; &nbsp;
+                <button class="btn btn-outline-danger" (click)="onDelete(customer.$key)">Delete</button>
+            </td>
+        </tr>
+    </ng-container>
+</table>

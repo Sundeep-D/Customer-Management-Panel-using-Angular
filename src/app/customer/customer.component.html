@@ -1,0 +1,57 @@
+<head>
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
+</head>
+
+<div class="row">
+
+    <div class="col-md-3">
+        <form [formGroup]="this.customerService.form" (ngSubmit)="onSubmit()">
+            <input type="hidden" formControlName="$key">
+            <div class="form-group">
+                <label>Full Name</label>
+                <input formControlName="fullname" class="form-control" [ngClass]="{'is-invalid': submitted && formControls.fullname.errors}">
+                <div class="invalid-feedback" *ngIf="submitted && formControls.fullname.errors">
+                    This field is required.
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input formControlName="email" class="form-control" [ngClass]="{'is-invalid': submitted && formControls.email.errors}">
+                <div class="invalid-feedback" *ngIf="submitted && formControls.email.errors">
+                    Invalid Email Address
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Mobile Number</label>
+                <input formControlName="mobile" class="form-control" [ngClass]="{'is-invalid': submitted && formControls.mobile.errors}">
+                <div class="invalid-feedback" *ngIf="submitted && formControls.mobile.errors">
+                    <label  *ngIf="formControls.mobile.errors.required">This field is required.</label>
+                    <label  *ngIf="formControls.mobile.errors.minlength"> Invalid Mobile Number.</label>
+                   
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Location</label>
+                <input formControlName="location" class="form-control" [ngClass]="{'is-invalid': submitted && formControls.location.errors}">
+                <div class="invalid-feedback" *ngIf="submitted && formControls.location.errors">
+                    This field is required.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="Submit">
+            </div>
+
+        </form>
+        <div class="alert alert-info" *ngIf="showSuccessMessage">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <strong>Successfull!</strong><br> Customer details successfuly saved in database.
+        </div>
+        
+    </div>
+    <div class="col-md-8">
+        <app-customer-list></app-customer-list>
+    </div>
+
+
+</div> 
